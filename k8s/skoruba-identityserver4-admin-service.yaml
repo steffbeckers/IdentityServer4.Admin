@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: skoruba-identityserver4-admin
+  namespace: skoruba-identityserver4
+  labels:
+    app: admin
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: admin
