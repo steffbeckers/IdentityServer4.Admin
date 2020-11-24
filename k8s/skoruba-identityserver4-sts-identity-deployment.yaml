@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skoruba-identityserver4-sts-identity
+  namespace: skoruba-identityserver4
+  labels:
+    app: sts-identity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sts-identity
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: sts-identity
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: skoruba-identityserver4-sts-identity
+          image: skoruba/identityserver4-sts-identity:2.0.0-beta1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Production
+            - name: AdminConfiguration__IdentityAdminBaseUrl
+              value: https://admin.sts.steffbeckers.eu
+            - name: AdvancedConfiguration__IssuerUri
+              value: https://sts.steffbeckers.eu
+            - name: AdvancedConfiguration__PublicOrigin
+              value: https://sts.steffbeckers.eu
+            - name: ConnectionStrings__ConfigurationDbConnection
+              value: Server=mssql;Database=SkorubaIdentityServer;User ID=sa;Password=OJPVz3waeUwkYBls1fqU;MultipleActiveResultSets=true
+            - name: ConnectionStrings__DataProtectionDbConnection
+              value: Server=mssql;Database=SkorubaIdentityServer;User ID=sa;Password=OJPVz3waeUwkYBls1fqU;MultipleActiveResultSets=true
+            - name: ConnectionStrings__IdentityDbConnection
+              value: Server=mssql;Database=SkorubaIdentityServer;User ID=sa;Password=OJPVz3waeUwkYBls1fqU;MultipleActiveResultSets=true
+            - name: ConnectionStrings__PersistedGrantDbConnection
+              value: Server=mssql;Database=SkorubaIdentityServer;User ID=sa;Password=OJPVz3waeUwkYBls1fqU;MultipleActiveResultSets=true
+            - name: DockerConfiguration__UpdateCaCertificate
+              value: "false"
+          resources: {}
