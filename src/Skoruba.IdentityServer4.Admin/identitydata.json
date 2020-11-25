@@ -7,16 +7,16 @@
     ],
     "Users": [
       {
-        "Username": "admin",
+        "Username": "steff",
         "Password": "Pa$$word123",
-        "Email": "admin@skoruba.com",
+        "Email": "steff@steffbeckers.eu",
         "Roles": [
           "SkorubaIdentityAdminAdministrator"
         ],
         "Claims": [
           {
             "Type": "name",
-            "Value": "admin"
+            "Value": "Steff"
           }
         ]
       }

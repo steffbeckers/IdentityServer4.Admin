@@ -78,36 +78,36 @@
             }
         ],
         "Clients": [
-            {
-                "ClientId": "skoruba_identity_admin",
-                "ClientName": "skoruba_identity_admin",
-                "ClientUri": "https://localhost:44303",
-                "AllowedGrantTypes": [
-                    "authorization_code"
-                ],
-                "RequirePkce": true,
-                "ClientSecrets": [
-                    {
-                        "Value": "skoruba_admin_client_secret"
-                    }
-                ],
-                "RedirectUris": [
-                    "https://localhost:44303/signin-oidc"
-                ],
-                "FrontChannelLogoutUri": "https://localhost:44303/signout-oidc",
-                "PostLogoutRedirectUris": [
-                    "https://localhost:44303/signout-callback-oidc"
-                ],
-                "AllowedCorsOrigins": [
-                    "https://localhost:44303"
-                ],
-                "AllowedScopes": [
-                    "openid",
-                    "email",
-                    "profile",
-                    "roles"
-                ]
-            },
+          {
+            "ClientId": "skoruba_identity_admin",
+            "ClientName": "skoruba_identity_admin",
+            "ClientUri": "https://admin.sts.steffbeckers.eu",
+            "AllowedGrantTypes": [
+              "authorization_code"
+            ],
+            "RequirePkce": true,
+            "ClientSecrets": [
+              {
+                "Value": "skoruba_admin_client_secret"
+              }
+            ],
+            "RedirectUris": [
+              "https://admin.sts.steffbeckers.eu/signin-oidc"
+            ],
+            "FrontChannelLogoutUri": "https://admin.sts.steffbeckers.eu/signout-oidc",
+            "PostLogoutRedirectUris": [
+              "https://admin.sts.steffbeckers.eu/signout-callback-oidc"
+            ],
+            "AllowedCorsOrigins": [
+              "https://admin.sts.steffbeckers.eu"
+            ],
+            "AllowedScopes": [
+              "openid",
+              "email",
+              "profile",
+              "roles"
+            ]
+          },
             {
                 "ClientId": "skoruba_identity_admin_api_swaggerui",
                 "ClientName": "skoruba_identity_admin_api_swaggerui",
@@ -117,13 +117,13 @@
                 "RequireClientSecret": false,
                 "RequirePkce": true,
                 "RedirectUris": [
-                    "https://localhost:44302/swagger/oauth2-redirect.html"
+                    "https://api.admin.sts.steffbeckers.eu/swagger/oauth2-redirect.html"
                 ],
                 "AllowedScopes": [
                     "skoruba_identity_admin_api"
                 ],
                 "AllowedCorsOrigins": [
-                    "https://localhost:44302"
+                    "https://api.admin.sts.steffbeckers.eu"
                 ]
             }
         ]
