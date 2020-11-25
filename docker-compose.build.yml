@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  admin:
+    image: registry.steffbeckers.eu/skoruba/identityserver4/admin
+    build:
+      context: .
+      dockerfile: src/Skoruba.IdentityServer4.Admin/Dockerfile
+  admin.api:
+    image: registry.steffbeckers.eu/skoruba/identityserver4/admin-api
+    build:
+      context: .
+      dockerfile: src/Skoruba.IdentityServer4.Admin.Api/Dockerfile
+  sts.identity:
+    image: registry.steffbeckers.eu/skoruba/identityserver4/sts-identity
+    build:
+      context: .
+      dockerfile: src/Skoruba.IdentityServer4.STS.Identity/Dockerfile

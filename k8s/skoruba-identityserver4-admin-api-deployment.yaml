@@ -20,7 +20,8 @@ spec:
       restartPolicy: Always
       containers:
         - name: skoruba-identityserver4-admin-api
-          image: skoruba/identityserver4-admin-api:2.0.0-beta1
+          #image: skoruba/identityserver4-admin-api:2.0.0-beta1
+          image: registry.steffbeckers.eu/skoruba/identityserver4/admin-api
           imagePullPolicy: Always
           ports:
             - containerPort: 80
