@@ -384,7 +384,7 @@ namespace Skoruba.IdentityServer4.STS.Identity.Helpers
 
             if (externalProviderConfiguration.UseAzureAdProvider)
             {
-                authenticationBuilder.AddAzureAD(AzureADDefaults.AuthenticationScheme, AzureADDefaults.OpenIdScheme, AzureADDefaults.CookieScheme, AzureADDefaults.DisplayName,options =>
+                authenticationBuilder.AddAzureAD(AzureADDefaults.AuthenticationScheme, AzureADDefaults.OpenIdScheme, AzureADDefaults.CookieScheme, AzureADDefaults.DisplayName, options =>
                     {
                         options.ClientSecret = externalProviderConfiguration.AzureAdSecret;
                         options.ClientId = externalProviderConfiguration.AzureAdClientId;

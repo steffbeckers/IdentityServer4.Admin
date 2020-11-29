@@ -48,7 +48,7 @@ namespace Skoruba.IdentityServer4.STS.Identity.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index([FromQuery(Name = "user_code")] string userCode)
+        public async Task<IActionResult> Index([FromQuery(Name = "userCode")] string userCode)
         {
             if (string.IsNullOrWhiteSpace(userCode)) return View("UserCodeCapture");
 
